@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zadanie zwierzęta</title>
+<meta charset="utf-8">
+<style type="text/css">
+.zwierz
+{
+width: 200px;
+height: 200px;
+}
+
+
+
+
+</style>
+</head>
+<body>
+    
+    <script type="text/javascript">
+    var imgId;
+    var dogpos;
+    function losowanie()
+    {
+        dogpos=Math.floor(Math.random()*3+1);
+        console.log(dogpos);
+
+    }
+    function ukrimg()
+    {
+        losowanie();
+        document.getElementById("zdj1").src="palec.jpg";
+        document.getElementById("zdj2").src="palec.jpg";
+        document.getElementById("zdj3").src="palec.jpg";
+
+    }
+    function Odkrfot()
+{
+    if(imgId == "zdj1")
+    {
+        if(dogpos == 1)
+        {
+        document.getElementById('zdj1').src = "pies.jpg";
+        document.getElementById('zdj2').src = "kot.jpg";
+        document.getElementById('zdj3').src = "kot.jpg";
+        }
+        else
+        {
+        document.getElementById('zdj1').src = "kot.jpg";
+        }
+    }
+    else if(imgId == "zdj2")
+    {
+        if(dogpos == 2)
+        {
+        document.getElementById('zdj1').src = "kot.jpg";
+        document.getElementById('zdj2').src = "pies.jpg";
+        document.getElementById('zdj3').src = "kot.jpg";
+        }
+        else
+        {
+        document.getElementById('zdj2').src = "kot.jpg";
+        }
+    }
+    else if(imgId == "zdj3")
+    {
+        if(dogpos == 3)
+        {
+        document.getElementById('zdj1').src = "kot.jpg";
+        document.getElementById('zdj2').src = "kot.jpg";
+        document.getElementById('zdj3').src = "pies.jpg";
+        }
+        else
+        {
+        document.getElementById('zdj3').src = "kot.jpg";
+        }
+    }
+}
+
+function pobrid(idpobr)
+{
+
+    imgId = idpobr;
+
+    Odkrfot();
+}
+    
+    
+    </script>
+
+<center>
+<img class="zwierz" onclick="pobrid(this.id)" src="kot.jpg" id="zdj1">
+<img class="zwierz" onclick="pobrid(this.id)" src="kot.jpg" id="zdj2">
+<img class="zwierz" onclick="pobrid(this.id)" src="pies.jpg" id="zdj3">
+<br>
+<button onclick="ukrimg()">
+    Losuj.
+</button>
+</center>
+
+
+
+
+
+
+
+</body>
+</html>
